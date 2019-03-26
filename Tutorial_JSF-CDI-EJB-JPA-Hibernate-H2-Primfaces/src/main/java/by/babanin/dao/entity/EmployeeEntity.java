@@ -44,6 +44,7 @@ public class EmployeeEntity implements Serializable {
     )
     private Set<ProjectEntity> projectEntities;
 
+    @Transient
     @EJB
     private ExampleEJB exampleEJB;
 

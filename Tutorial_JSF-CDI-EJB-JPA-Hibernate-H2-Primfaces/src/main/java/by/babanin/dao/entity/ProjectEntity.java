@@ -29,6 +29,7 @@ public class ProjectEntity implements Serializable {
     @ManyToMany(mappedBy = "projectEntities")
     private Set<EmployeeEntity> employeeEntities;
 
+    @Transient
     @EJB
     private ExampleEJB exampleEJB;
 

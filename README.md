@@ -4,6 +4,18 @@ Applications server - WildFly 16.0.0
 
 At the moment, the launch of the application shows the following error:
 
+19:15:28,594 ERROR [io.undertow.request] (default task-1) UT005023: Exception handling request to /Tutorial_JSF-CDI-EJB-JPA-Hibernate-H2-Primfaces-1.0-SNAPSHOT/example.xhtml: javax.servlet.ServletException
+Caused by: java.lang.ExceptionInInitializerError
+	at by.babanin.dao.ApplicationContext.getInstance(ApplicationContext.java:25)
+	at by.babanin.dao.ExampleEJB.<init>(ExampleEJB.java:19)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'addressRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class by.babanin.dao.entity.AddressEntity
+	at by.babanin.dao.ApplicationContext.<init>(ApplicationContext.java:18)
+	at by.babanin.dao.ApplicationContext.<init>(ApplicationContext.java:8)
+	at by.babanin.dao.ApplicationContext$Singleton.<clinit>(ApplicationContext.java:14)
+Caused by: java.lang.IllegalArgumentException: Not a managed type: class by.babanin.dao.entity.AddressEntity
+
+Error fixed (Thanks to Nickolay Bobrov - Telegram @lWeRl ): 
+
 18:54:17,666 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 86) MSC000001: Failed to start service jboss.persistenceunit."Tutorial_JSF-CDI-EJB-JPA-Hibernate-H2-Primfaces-1.0-SNAPSHOT.war#jpaData": org.jboss.msc.service.StartException in service jboss.persistenceunit."Tutorial_JSF-CDI-EJB-JPA-Hibernate-H2-Primfaces-1.0-SNAPSHOT.war#jpaData": javax.persistence.PersistenceException: [PersistenceUnit: jpaData] Unable to build Hibernate SessionFactory
 Caused by: javax.persistence.PersistenceException: [PersistenceUnit: jpaData] Unable to build Hibernate SessionFactory
 Caused by: org.hibernate.MappingException: Could not determine type for: by.babanin.dao.ExampleEJB, at table: ADDRESS, for columns: [org.hibernate.mapping.Column(exampleEJB)]

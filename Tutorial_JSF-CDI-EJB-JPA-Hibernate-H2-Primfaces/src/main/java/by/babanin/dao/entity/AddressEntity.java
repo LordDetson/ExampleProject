@@ -34,6 +34,7 @@ public class AddressEntity implements Serializable {
     @Column(name = "POST_CODE", length = 10)
     private String postCode;
 
+    @Transient
     @EJB
     private ExampleEJB exampleEJB;
 
