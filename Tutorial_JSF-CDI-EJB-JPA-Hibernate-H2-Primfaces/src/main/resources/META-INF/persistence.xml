@@ -3,5 +3,9 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
-    <persistence-unit name="jpaData"  transaction-type="RESOURCE_LOCAL"/>
+    <persistence-unit name="jpaData"  transaction-type="RESOURCE_LOCAL">
+        <class>by.babanin.dao.entity.AddressEntity</class>
+        <class>by.babanin.dao.entity.EmployeeEntity</class>
+        <class>by.babanin.dao.entity.ProjectEntity</class>
+    </persistence-unit>
 </persistence>
