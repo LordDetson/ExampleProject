@@ -4,6 +4,10 @@ Applications server - WildFly 16.0.0
 
 At the moment, the launch of the application shows the following error:
 
+No errors
+
+Error fixed (Thanks to Stackoverflow - link https://stackoverflow.com/questions/31157108/spring-data-jpa-not-an-managed-type-class-xxx):
+
 19:15:28,594 ERROR [io.undertow.request] (default task-1) UT005023: Exception handling request to /Tutorial_JSF-CDI-EJB-JPA-Hibernate-H2-Primfaces-1.0-SNAPSHOT/example.xhtml: javax.servlet.ServletException
 Caused by: java.lang.ExceptionInInitializerError
 	at by.babanin.dao.ApplicationContext.getInstance(ApplicationContext.java:25)
