@@ -20,19 +20,19 @@
             </h:inputText>
 
             <h:outputLabel value="Страна: "/>
-            <h:inputText value="#{employeeEntity.addressEntity.country}"/>
+            <h:inputText value="#{addressEntity.country}"/>
 
             <h:outputLabel value="Город: "/>
-            <h:inputText value="#{employeeEntity.addressEntity.city}"/>
+            <h:inputText value="#{addressEntity.city}"/>
 
             <h:outputLabel value="Улица: "/>
-            <h:inputText value="#{employeeEntity.addressEntity.street}"/>
+            <h:inputText value="#{addressEntity.street}"/>
 
             <h:outputLabel value="Почновый индекс: "/>
-            <h:inputText value="#{employeeEntity.addressEntity.postCode}"/>
+            <h:inputText value="#{addressEntity.postCode}"/>
 
             <h:outputLabel value="Действие: "/>
-            <h:commandLink value="Сохранить" action="#{employeeEntity.save}"/>
+            <h:commandLink value="Сохранить" action="#{employeeEntity.save(addressEntity)}"/>
         </h:panelGrid>
     </h:form>
 </h:body>

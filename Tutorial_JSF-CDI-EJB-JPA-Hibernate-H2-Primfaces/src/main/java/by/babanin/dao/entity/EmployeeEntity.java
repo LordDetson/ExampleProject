@@ -6,8 +6,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 import java.util.StringJoiner;
@@ -16,10 +15,7 @@ import java.util.StringJoiner;
 @RequestScoped
 @Entity
 @Table(name = "EMPLOYEE")
-public class EmployeeEntity implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
+public class EmployeeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -127,7 +123,8 @@ public class EmployeeEntity implements Serializable {
                 .toString();
     }
 
-    public void save() {
+    public void save(AddressEntity addressEntity) {
+        setAddressEntity(addressEntity);
         exampleEJB.saveEmployee(this);
     }
 }

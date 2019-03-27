@@ -6,7 +6,6 @@ import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Objects;
 import java.util.StringJoiner;
 
@@ -14,10 +13,7 @@ import java.util.StringJoiner;
 @RequestScoped
 @Entity
 @Table(name = "ADDRESS")
-public class AddressEntity implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
+public class AddressEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
